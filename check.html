@@ -1,0 +1,27 @@
+<html>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="conversation.js"></script>
+    <body>
+        <h1 id = "heading" style="visibility: hidden;">yooo</h1>
+    </body>
+    <script>
+        var ds = new DaveService("https://test.iamdave.ai", "student_test", {"signup_apikey": "c3R1ZGVudF90ZXN0MTY4NjY0MjA3OC40Mw__"});
+        function aft(){
+           document.getElementById("heading").style.visibility = "visible";
+        }
+        if(getCookie("authentication")){
+            aft()
+        }else{
+            ds.signup({
+                "user_id": "shubhamo5996@gmail.com",
+                "person_type": "visitor",
+                "source": "web-avatar",
+                "origin": "https://test.iamdave.ai",
+                "validated": true,
+                "referrer": document.referrer,
+                "application": "brands"
+            }, (data) => {console.log(data)},  (data) => {console.log(data)}).then(aft)
+        }
+    </script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poisson Simulation - Sign In / Sign Up</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | q_project</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://unity-plugin.iamdave.ai/conversation-plugin/lib/jquery-3.6.0.min.js"></script>
+    <script src="https://unity-plugin.iamdave.ai/conversation-plugin/source/2.0/js/dave_utils.js"></script>
+
+    
+
+    <script src="conversation.js"></script>
+  </head>
+  <body>
+
+    <div id="landingForm">
+      <div class="title-container">
+        <h1>Poisson Simulation</h1>
+      </div>
+      <div class="container">
+        <div class="form-toggle">
+          <button id="signInBtn">Sign In</button>
+          <button id="signUpBtn">Sign Up</button>
+        </div>
+        <div class="form-container">
+          <form id="signInForm">
+            <h2>Sign In</h2>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="submit">Sign In</button>
+          </form>
+
+          <form id="signUpForm">
+            <h2>Sign Up</h2>
+            <label for="newUsername">Username</label>
+            <input type="text" id="newUsername" name="newUsername" required />
+
+            <label for="newPassword">Password</label>
+            <input
+              type="password"
+              id="newPassword"
+              name="newPassword"
+              required
+            />
+
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <form id ="jsonForm">
+      <label for="jsonTextInput">JSON:</label>
+      <textarea id="jsonTextInput" name="jsonText"></textarea><br>
+      <input type="button" value="Submit" onclick="loadUnityInstance()">
+    </form>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+
+        <!-- <div id="unity-webgl-logo"></div> -->
+        <div id="unity-fullscreen-button"></div>
+        <div id="conversation_form">
+          <label for="customer_response">Type Your Query Here</label>
+          <input type="text" id="customer_response" name="customer_response" required />
+          <button id="conversationBtn">Send</button>
+        </div>
+        <!-- <div id="unity-build-title">q_project</div> -->
+      </div>
+    </div>
+    <script src="unityScript.js"></script>
+
+    <script src="loginScript.js"></script>
+  </body>
+</html>
